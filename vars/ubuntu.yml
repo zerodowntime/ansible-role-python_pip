@@ -1,0 +1,5 @@
+---
+# zerodowntime.python_pip/vars/ubuntu.yml
+
+# system pip package name, specified by system
+python_pip__default_package_name: python3-pip

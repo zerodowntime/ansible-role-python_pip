@@ -1,0 +1,9 @@
+---
+# zerodowntime.python_pip/defaults/main.yml
+
+# python_pip__upgrade: bool
+#   Upgrade python-pip after install: Upgrade pip module pip install --upgrade pip
+python_pip__upgrade: true
+
+
+python_pip__package_name: "{{ python_pip__default_package_name }}"

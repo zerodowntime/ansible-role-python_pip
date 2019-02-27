@@ -1,0 +1,5 @@
+---
+# zerodowntime.python_pip/vars/main.yml
+
+# installed pip version
+python_pip__version: latest

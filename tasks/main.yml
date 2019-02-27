@@ -1,0 +1,32 @@
+---
+
+- name: "chrony | configure chrony /etc/chrony.conf"
+  vars:
+    vars_files:
+      - "vars/{{ ansible_distribution|lower }}.{{ ansible_distribution_major_version|int }}.yml"
+      - "vars/{{ ansible_distribution|lower }}.yml"
+  include_vars: "{{ lookup('first_found', vars_files) }}"
+
+
+- name: python_pip | install
+  become: true
+  package:
+    name: "{{ python_pip__package_name }}"
+    state: present
+  # notify:
+  #   - upgrade pip version
+  tags:
+    - python_pip
+    - python_pip::install
+
+
+- name: upgrade pip version
+  become: true
+  pip:
+    name: pip
+    state: "{{ python_pip__version }}"
+  when: python_pip__upgrade
+  tags:
+    - python_pip
+    - python_pip::install
+    - python_pip::upgrade

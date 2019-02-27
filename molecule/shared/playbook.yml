@@ -1,0 +1,8 @@
+---
+- name: This_play
+  hosts: all
+  become: true
+
+  roles:
+    - role: zerodowntime.python_pip
+      python_pip__upgrade: true
