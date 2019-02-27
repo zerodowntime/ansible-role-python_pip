@@ -46,6 +46,7 @@ platforms:
       uri: "'qemu:///system'"
     groups:
       - ubuntu
+      - python3
 
   - name: "${ROLE_CI_PREFIX:-l}-ubuntu1404"
     box: actinium/ubuntu14
@@ -75,7 +76,7 @@ provisioner:
       always: true
   inventory:
     group_vars:
-      ubuntu:
+      python3:
         ansible_python_interpreter: /usr/bin/python3
   lint:
     name: ansible-lint
@@ -93,7 +94,7 @@ scenario:
     - converge
     - idempotence
     - side_effect
-    - verify
+    # - verify
     - destroy
 
 
