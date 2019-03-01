@@ -21,11 +21,6 @@ platforms:
   # https://app.vagrantup.com/boxes/search?provider=libvirt
   - name: "${ROLE_CI_PREFIX:-l}-centos7"
     box: centos/7
-    interfaces:
-      - network_name: private_network
-        type: static
-        auto_config: true
-        ip: 192.168.90.205
     provider_options:
       memory: 1024
       cpus: 1
@@ -35,11 +30,6 @@ platforms:
 
   - name: "${ROLE_CI_PREFIX:-l}-ubuntu1604"
     box: generic/ubuntu1604
-    interfaces:
-      - network_name: private_network
-        type: static
-        auto_config: true
-        ip: 192.168.90.206
     provider_options:
       memory: 1024
       cpus: 1
