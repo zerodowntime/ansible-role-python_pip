@@ -1,6 +1,6 @@
 ---
 
-- name: "chrony | configure chrony /etc/chrony.conf"
+- name: python_pip | load os vars
   vars:
     vars_files:
       - "vars/{{ ansible_distribution|lower }}.{{ ansible_distribution_major_version|int }}.yml"
